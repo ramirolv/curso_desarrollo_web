@@ -1,0 +1,182 @@
+:root {
+  --purple-glass: rgba(138, 43, 226, 0.2);
+  --white-glass: rgba(255, 255, 255, 0.1);
+  --border-glass: rgba(255, 255, 255, 0.3);
+  --card-hover: rgba(255, 255, 255, 0.2);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #4b0082, #8a2be2);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.container {
+  background: var(--white-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hidden {
+  display: none;
+}
+header {
+  text-align: center;
+  color: #fff;
+}
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#login input,
+.add-task input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-glass);
+  width: 200px;
+}
+#login button,
+#addBoardBtn,
+.add-task button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--purple-glass);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+#login button:hover,
+#addBoardBtn:hover,
+.add-task button:hover {
+  transform: scale(1.05);
+  background: var(--card-hover);
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#welcome {
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+#boards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+.board {
+  background: var(--purple-glass);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s;
+}
+.board:hover {
+  transform: translateY(-5px);
+}
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 6px;
+  border-radius: 6px;
+}
+.board-header h3 {
+  color: #fff;
+  font-size: 1.2rem;
+}
+.board-header button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 5px;
+}
+.tasks.dragover {
+  background: var(--card-hover);
+}
+.task {
+  background: var(--white-glass);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border-glass);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.task:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.task.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+.task.dragging {
+  opacity: 0.5;
+  transform: scale(1.05);
+}
+.task > .info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.task .due {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+.add-task {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.add-task input[type="text"] {
+  flex: 1;
+}
+.add-task input[type="date"] {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border-glass);
+}
+#addBoardBtn {
+  align-self: center;
+}
+@media (max-width: 600px) {
+  .board {
+    min-width: 200px;
+  }
+}

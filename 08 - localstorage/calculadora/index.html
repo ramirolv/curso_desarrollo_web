@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Avanzada</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Calculadora</h1>
+    </header>
+    <div class="calculator">
+      <input type="text" id="display" disabled placeholder="0" />
+      <div class="buttons">
+        <!-- Row 1 -->
+        <button data-op="clear">C</button>
+        <button data-op="sqrt">√</button>
+        <button data-op="^">^</button>
+        <button data-op="/">÷</button>
+        <!-- Row 2 -->
+        <button data-op="7">7</button>
+        <button data-op="8">8</button>
+        <button data-op="9">9</button>
+        <button data-op="*">×</button>
+        <!-- Row 3 -->
+        <button data-op="4">4</button>
+        <button data-op="5">5</button>
+        <button data-op="6">6</button>
+        <button data-op="-">−</button>
+        <!-- Row 4 -->
+        <button data-op="1">1</button>
+        <button data-op="2">2</button>
+        <button data-op="3">3</button>
+        <button data-op="+">+</button>
+        <!-- Row 5 -->
+        <button data-op="0">0</button>
+        <button data-op=".">.</button>
+        <button data-op="=">=</button>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

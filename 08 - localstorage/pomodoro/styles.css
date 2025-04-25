@@ -1,0 +1,92 @@
+:root {
+  --purple-glass: rgba(138, 43, 226, 0.2);
+  --white-glass: rgba(255, 255, 255, 0.1);
+  --border-glass: rgba(255, 255, 255, 0.3);
+  --accent: #8a2be2;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #4b0082, #8a2be2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.container {
+  background: var(--white-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+header h1 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+.mode-select {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.mode-select button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: var(--purple-glass);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.mode-select button.active,
+.mode-select button:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+.timer-display {
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.controls button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--purple-glass);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.controls button:hover:enabled {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+@media (max-width: 350px) {
+  .timer-display {
+    font-size: 3rem;
+  }
+  .controls button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
