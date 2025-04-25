@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spotify API Dashboard</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería de Gatos</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header>
-    <h1>Spotify API Dashboard</h1>
-    <p>Explora tus datos de Spotify</p>
+    <h1>¡Mira estos gatitos!</h1>
+    <button id="miBoton">Cargar Gatos</button>
   </header>
-  <nav>
-    <button onclick="setView('topTracks')">Top Tracks</button>
-    <button onclick="setView('topArtists')">Top Artists</button>
-    <button onclick="setView('recentlyPlayed')">Recently Played</button>
-    <button onclick="setView('search')">Search</button>
-  </nav>
-  <section id="content">
-    <!-- Aquí se inyectará el contenido dinámico -->
-  </section>
-  <footer>
-    Hecho con <strong>Spotify Web API</strong> y <strong>amor</strong>.
-  </footer>
-  <script src="./script.js"></script>
+
+  <main>
+    <div id="container" class="gallery"></div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,95 @@
+/* Paleta de azules */
+:root {
+    --blue-light: #E0F7FF;
+    --blue:       #2196F3;
+    --blue-dark:  #0D47A1;
+    --white:      #FFFFFF;
+    --shadow:     rgba(0, 0, 0, 0.15);
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--blue-light);
+    color: var(--blue-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--blue);
+    color: var(--white);
+    box-shadow: 0 2px 6px var(--shadow);
+  }
+  
+  header h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  header button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: var(--white);
+    color: var(--blue-dark);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  header button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow);
+  }
+  
+  /* Galería responsiva */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Tarjeta de imagen */
+  .gallery-item {
+    background-color: var(--white);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px var(--shadow);
+  }
+  
+  .gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Ajustes móviles */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.5rem;
+    }
+    header button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
